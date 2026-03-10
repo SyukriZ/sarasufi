@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SaraSufiHoney - Place Your Order</title>
+    <link rel="icon" type="image/png" href="images/toplogo.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <style>
+      /* Orders Page Specific Styles - Enhanced UI/UX */
+      
+      /* Hero with Gold Gradient */
+      .orders-hero {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.95) 0%,
+          rgba(184, 150, 12, 0.95) 50%,
+          rgba(160, 130, 10, 0.95) 100%
+        );
+      }
+
+      /* Steps Indicator */
+      .order-steps {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .step-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+      }
+
+      .step-item.active {
+        opacity: 1;
+      }
+
+      .step-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--gold, #d4af37);
+        color: var(--black, #000);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1rem;
+        border: 2px solid var(--gold, #d4af37);
+      }
+
+      .step-item.active .step-number {
+        background: var(--gold, #d4af37);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+      }
+
+      .step-text {
+        font-weight: 600;
+        color: var(--black, #000);
+        font-size: 0.95rem;
+      }
+
+      .step-divider {
+        width: 40px;
+        height: 2px;
+        background: var(--gold, #d4af37);
+        opacity: 0.3;
+      }
+
+      /* Order Layout */
+      .order-layout {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+
+      /* Form Styling */
+      .order-form-container {
+        background: var(--white, #ffffff);
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .order-group {
+        margin-bottom: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--gray-light, #e5e5e5);
+      }
+
+      .order-group:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .order-group h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        color: var(--black, #000);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .order-group h3 i {
+        color: var(--gold, #d4af37);
+        font-size: 1.1rem;
+      }
+
+      .order-field {
+        margin-bottom: 1.5rem;
+      }
+
+      .order-field label {
+        display: block;
+        font-weight: 600;
+        color: var(--black, #000);
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .order-field input[type="text"],
+      .order-field input[type="tel"],
+      .order-field input[type="email"],
+      .order-field textarea,
+      .order-field select {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 2px solid var(--gray-light, #e5e5e5);
+        border-radius: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        background: var(--white, #ffffff);
+        transition: all 0.3s ease;
+      }
+
+      .order-field input:focus,
+      .order-field textarea:focus,
+      .order-field select:focus {
+        outline: none;
+        border-color: var(--gold, #d4af37);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+      }
+
+      .order-field textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .order-inline-label {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--gray-text, #666);
+        margin-top: 0.5rem;
+        font-style: italic;
+      }
+
+      /* Quantity Stepper */
+      .quantity-stepper {
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid var(--gray-light, #e5e5e5);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .qty-btn {
+        width: 44px;
+        height: 44px;
+        border: none;
+        background: var(--off-white, #f5f5f5);
+        color: var(--black, #000);
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .qty-btn:hover {
+        background: var(--gold, #d4af37);
+        color: var(--black, #000);
+      }
+
+      .qty-input {
+        width: 60px;
+        height: 44px;
+        border: none;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+        -moz-appearance: textfield;
+      }
+
+      .qty-input::-webkit-outer-spin-button,
+      .qty-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Radio Buttons Styling */
+      .order-radio-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .radio-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        border: 2px solid var(--gray-light, #e5e5e5);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: var(--white, #ffffff);
+      }
+
+      .radio-card:hover {
+        border-color: var(--gold, #d4af37);
+        background: rgba(212, 175, 55, 0.02);
+      }
+
+      .radio-card input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        accent-color: var(--gold, #d4af37);
+        cursor: pointer;
+      }
+
+      .radio-card label {
+        margin: 0;
+        cursor: pointer;
+        flex: 1;
+        font-weight: 500;
+      }
+
+      .radio-card.selected {
+        border-color: var(--gold, #d4af37);
+        background: rgba(212, 175, 55, 0.05);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+      }
+
+      /* Order Summary Sidebar */
+      .order-summary {
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+      }
+
+      .summary-card {
+        background: var(--white, #ffffff);
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 2px solid var(--gold, #d4af37);
+      }
+
+      .summary-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px dashed var(--gray-light, #e5e5e5);
+      }
+
+      .summary-header h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: var(--black, #000);
+        margin-bottom: 0.5rem;
+      }
+
+      .summary-header p {
+        color: var(--gray-text, #666);
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--gray-light, #e5e5e5);
+      }
+
+      .summary-item:last-child {
+        border-bottom: none;
+      }
+
+      .summary-item.empty {
+        color: var(--gray-text, #666);
+        font-style: italic;
+        justify-content: center;
+        padding: 2rem 0;
+      }
+
+      .summary-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1.5rem;
+        margin-top: 1rem;
+        border-top: 2px solid var(--black, #000);
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .summary-total span:last-child {
+        color: var(--gold-dark, #b8860b);
+        font-size: 1.4rem;
+      }
+
+      .summary-note {
+        background: var(--off-white, #f5f5f5);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--gray-text, #666);
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .summary-note i {
+        color: var(--gold, #d4af37);
+        margin-top: 0.2rem;
+      }
+
+      /* Submit Button - WhatsApp Style */
+      .order-submit {
+        margin-top: 2rem;
+      }
+
+      .btn-submit-order {
+        width: 100%;
+        padding: 1.25rem;
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        text-decoration: none;
+      }
+
+      .btn-submit-order:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+      }
+
+      .btn-submit-order i {
+        font-size: 1.3rem;
+      }
+
+      .btn-submit-order:disabled {
+        background: var(--gray-light, #e5e5e5);
+        color: var(--gray-text, #666);
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      /* Trust Badges */
+      .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--gray-text, #666);
+        font-size: 0.85rem;
+      }
+
+      .trust-badge i {
+        color: var(--gold, #d4af37);
+        font-size: 1.2rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .order-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .order-summary {
+          position: relative;
+          top: 0;
+          order: -1;
+          margin-bottom: 2rem;
+        }
+
+        .summary-card {
+          max-width: 500px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .order-form-container {
+          padding: 1.5rem;
+        }
+
+        .step-divider {
+          display: none;
+        }
+
+        .order-steps {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .radio-card {
+          padding: 1rem;
+        }
+
+        .trust-badges {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      /* Animation */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .order-group {
+        animation: slideIn 0.5s ease forwards;
+      }
+
+      .order-group:nth-child(1) { animation-delay: 0.1s; }
+      .order-group:nth-child(2) { animation-delay: 0.2s; }
+      .order-group:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+  </head>
+  <body>
+    <!-- Header + Navigation -->
+    <header class="hero hero-small orders-hero">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/sarasufihoneyreal.png"
+              alt="SaraSufiHoney Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">SaraSufiHoney</span>
+        </div>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="benefits.html">Benefits | Education</a></li>
+            <li><a href="reviews.html">Refund Policy</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li><a href="blog.html">Blog | Article</a></li>
+            <li><a href="orders.html" class="nav-active">Orders</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Place Your Order</h1>
+        <p>
+          Fill in your details below and send your order directly to us via WhatsApp for instant confirmation.
+        </p>
+        <div class="btn-row">
+          <a
+            href="https://wa.me/60134712795?text=Hi%2C%20I%20want%20to%20order%20Kelulut%20Premium%20Gold-%20Multiflora%20100g"
+            target="_blank"
+            class="btn-primary"
+          >
+            <i class="fab fa-whatsapp"></i> Quick Order
+          </a>
+          <a href="#order-form" class="btn-secondary">Custom Order Form</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Steps Section -->
+    <section class="section section-light" style="padding-bottom: 0;">
+      <div class="order-steps">
+        <div class="step-item active">
+          <div class="step-number"></div>
+          <span class="step-text">Fill Details</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item">
+          <div class="step-number"></div>
+          <span class="step-text">Review Order</span>
+        </div>
+        <div class="step-divider"></div>
+        <div class="step-item">
+        <div class="step-number" style="padding: 0; overflow: hidden; background: white;">
+      <img src="images/clearlogo.png" alt="SaraSufiHoney Logo" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+      <span class="step-text">Send via WhatsApp</span>
+      </div>
+
+    <!-- Order Form Section -->
+    <section class="section section-light" id="order-form" style="padding-top: 2rem;">
+      <div class="order-layout">
+        
+        <!-- Left: Form -->
+        <div class="order-form-container">
+          <form class="order-form" id="orderForm">
+            <!-- Customer details -->
+            <div class="order-group">
+              <h3><i class="fas fa-user"></i> Your Details</h3>
+
+              <div class="order-field">
+                <label for="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g. Aisyah Binti Ahmad"
+                  required
+                />
+              </div>
+
+              <div class="order-field">
+                <label for="phone">WhatsApp Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="e.g. 0123456789"
+                  required
+                />
+                <span class="order-inline-label">
+                  <i class="fab fa-whatsapp" style="color: #25d366;"></i> We'll send your order confirmation to this number.
+                </span>
+              </div>
+
+              <div class="order-field">
+                <label for="address">Delivery Address *</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="3"
+                  placeholder="House / unit no., street, postcode, state"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Product selection -->
+            <div class="order-group">
+              <h3><i class="fas fa-shopping-bag"></i> Order Details</h3>
+
+              <div class="order-field">
+                <label for="product-1">Product 1 *</label>
+                <select id="product-1" name="product_1" class="product-select" data-price="0" required>
+                  <option value="" data-price="0">Choose a product</option>
+                  <option value="Daily Golden Kelulut 250g" data-price="80">
+                    Daily Golden Kelulut – 250g (RM80)
+                  </option>
+                  <option value="Royal Black Kelulut 250g" data-price="120">
+                    Royal Black Kelulut – 250g (RM120)
+                  </option>
+                  <option value="Premium Honey Gift Box" data-price="150">
+                    Premium Honey Gift Box (RM150)
+                  </option>
+                </select>
+              </div>
+
+              <div class="order-field">
+                <label>Quantity</label>
+                <div class="quantity-stepper">
+                  <button type="button" class="qty-btn minus" data-target="qty-1"><i class="fas fa-minus"></i></button>
+                  <input type="number" id="qty-1" name="qty_1" min="1" value="1" class="qty-input" readonly>
+                  <button type="button" class="qty-btn plus" data-target="qty-1"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+
+              <div class="order-field">
+                <label for="product-2">Product 2 (optional)</label>
+                <select id="product-2" name="product_2" class="product-select" data-price="0">
+                  <option value="" data-price="0">Choose a product (optional)</option>
+                  <option value="Daily Golden Kelulut 250g" data-price="80">
+                    Daily Golden Kelulut – 250g (RM80)
+                  </option>
+                  <option value="Royal Black Kelulut 250g" data-price="120">
+                    Royal Black Kelulut – 250g (RM120)
+                  </option>
+                  <option value="Premium Honey Gift Box" data-price="150">
+                    Premium Honey Gift Box (RM150)
+                  </option>
+                </select>
+              </div>
+
+              <div class="order-field">
+                <label>Quantity</label>
+                <div class="quantity-stepper">
+                  <button type="button" class="qty-btn minus" data-target="qty-2"><i class="fas fa-minus"></i></button>
+                  <input type="number" id="qty-2" name="qty_2" min="1" value="1" class="qty-input" readonly>
+                  <button type="button" class="qty-btn plus" data-target="qty-2"><i class="fas fa-plus"></i></button>
+                </div>
+              </div>
+
+              <div class="order-field">
+                <label for="notes">Special Instructions (optional)</label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  rows="3"
+                  placeholder="Preferred delivery time, gift message, etc."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Shipping & payment -->
+            <div class="order-group">
+              <h3><i class="fas fa-truck"></i> Shipping & Payment</h3>
+
+              <div class="order-field">
+                <label>Shipping Method *</label>
+                <div class="order-radio-row">
+                  <div class="radio-card selected">
+                    <input type="radio" name="shipping" value="Standard courier" id="ship-standard" checked>
+                    <label for="ship-standard">
+                      <strong>Standard Courier</strong><br>
+                      <small>2–5 working days (RM10)</small>
+                    </label>
+                  </div>
+                  <div class="radio-card">
+                    <input type="radio" name="shipping" value="Self-pickup" id="ship-pickup">
+                    <label for="ship-pickup">
+                      <strong>Self-Pickup</strong><br>
+                      <small>Bangi / Kajang area – Free</small>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="order-field">
+                <label>Payment Method *</label>
+                <div class="order-radio-row">
+                  <div class="radio-card selected">
+                    <input type="radio" name="payment" value="Online transfer" id="pay-transfer" checked>
+                    <label for="pay-transfer">
+                      <strong>Online Bank Transfer</strong><br>
+                      <small>FPX / IBFT / DuitNow</small>
+                    </label>
+                  </div>
+                  <div class="radio-card">
+                    <input type="radio" name="payment" value="Cash on delivery" id="pay-cod">
+                    <label for="pay-cod">
+                      <strong>Cash on Delivery</strong><br>
+                      <small>Selected areas only</small>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right: Sticky Summary -->
+        <aside class="order-summary">
+          <div class="summary-card">
+            <div class="summary-header">
+              <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+              <p>Review your order before sending</p>
+            </div>
+
+            <div id="summary-content">
+              <div class="summary-item empty">
+                <i class="fas fa-shopping-cart" style="margin-right: 0.5rem;"></i> No products selected yet
+              </div>
+            </div>
+
+            <div class="summary-total">
+              <span>Estimated Total</span>
+              <span id="total-price">RM0.00</span>
+            </div>
+
+            <div class="summary-note">
+              <i class="fas fa-info-circle"></i>
+              <div>
+                Final shipping costs and payment details will be confirmed via WhatsApp. Bulk orders may qualify for free shipping.
+              </div>
+            </div>
+
+            <button type="button" class="btn-submit-order" id="submitOrderBtn" onclick="sendToWhatsApp()">
+              <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+            </button>
+
+            <div class="trust-badges">
+              <div class="trust-badge">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure Order</span>
+              </div>
+              <div class="trust-badge">
+                <i class="fas fa-check-circle"></i>
+                <span>Verified Products</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- FAQ teaser -->
+    <section class="section section-dark">
+      <h2 class="heading-underline">Need Help Before Ordering?</h2>
+      <p>
+        Visit the FAQ page for safety guidance, storage tips, and more about our
+        kelulut honey.
+      </p>
+      <div class="btn-row">
+        <a href="faq.html" class="btn-secondary">View FAQs</a>
+        <a href="contact.html" class="btn-primary">Contact Our Team</a>
+      </div>
+    </section>
+
+ <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-column footer-brand">
+          <div class="footer-logo">
+            <img src="images/sarasufihoneyreal.png" alt="SaraSufiHoney" />
+            <span>SaraSufiHoney</span>
+          </div>
+          <p>
+            We are a lifestyle honey brand that brings 100% pure, carefully
+            sourced kelulut honey from hive to home, delivering wellness in
+            every drop.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Wiki Hub</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="certification.html">Lab Report</a></li>
+            <li><a href="benefits.html">Honey Education</a></li>
+            <li><a href="orders.html">Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="blog.html">Blog & Article</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="reviews.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+          <h4>Connect With Us</h4>
+          <p>Follow us for daily honey tips and exclusive offers</p>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/sarasufihoney?igsh=YXA5ZnU3MDhydGdu"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/183qQZGTaq/?mibextid=wwXIfr"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@sarasufihoney?_r=1&_t=ZS-92hCdTRLbt7"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SaraSufiHoney. All rights reserved.</p>
+        <p>
+          <a href="refund.html">Refund Policy</a> ·
+          <a href="shipping.html">Shipping Policy</a> ·
+          <a href="privacy.html">Privacy Policy</a> ·
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scroll reveal script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealEls = document.querySelectorAll(".scroll-reveal");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              } else {
+                entry.target.classList.remove("is-visible");
+              }
+            });
+          },
+          {
+            threshold: 0.2,
+          }
+        );
+
+        revealEls.forEach((el) => observer.observe(el));
+        
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+          menuToggle.classList.toggle('active');
+          navLinks.classList.toggle('active');
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+          const question = item.querySelector('.faq-question');
+          
+          question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all others
+            faqItems.forEach(otherItem => {
+              otherItem.classList.remove('active');
+            });
+            
+            // Toggle current
+            if (!isActive) {
+              item.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service - SaraSufiHoney</title>
+    <link rel="icon" type="image/png" href="images/toplogo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <style>
+      /* CSS Variables Fallback */
+      :root {
+        --gold: #d4af37;
+        --gold-dark: #b8860b;
+        --black: #000000;
+        --white: #ffffff;
+        --gray-text: #666666;
+        --gray-light: #e5e5e5;
+        --off-white: #f5f5f5;
+      }
+
+      /* Terms Page Enhanced UI/UX - Matching Refund/Shipping Page Design */
+      
+      /* Hero with Gold Gradient - Same as Other Policy Pages */
+      .terms-hero {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.95) 0%,
+          rgba(184, 150, 12, 0.95) 50%,
+          rgba(160, 130, 10, 0.95) 100%
+        );
+      }
+
+      /* Policy Content Container */
+      .policy-page {
+        background: var(--off-white, #f5f5f5);
+        padding: 4rem 0;
+      }
+
+      .policy-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+
+      /* Enhanced Section Cards - Matching Product Card Style */
+      .policy-section-card {
+        background: var(--white, #ffffff);
+        border-radius: 24px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--gray-light, #e5e5e5);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .policy-section-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        border-color: var(--gold, #d4af37);
+      }
+
+      /* Icon Header for Each Section */
+      .policy-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--gray-light, #e5e5e5);
+      }
+
+      .policy-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--gold, #d4af37) 0%, var(--gold-dark, #b8860b) 100%);
+        color: var(--black, #000);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+      }
+
+      .policy-card-header h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: var(--black, #000);
+        margin: 0;
+      }
+
+      /* Typography Improvements */
+      .policy-content h2.heading-underline {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--black, #000);
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .policy-content h2.heading-underline::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold, #d4af37), var(--gold-dark, #b8860b));
+        border-radius: 2px;
+      }
+
+      .policy-intro {
+        text-align: center;
+        font-size: 1.1rem;
+        color: var(--gray-text, #666);
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+      }
+
+      /* List Styling */
+      .policy-section-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+
+      .policy-section-card ul li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 0.75rem;
+        color: var(--gray-text, #666);
+        line-height: 1.6;
+      }
+
+      .policy-section-card ul li::before {
+        content: '\f00c';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: var(--gold, #d4af37);
+        font-size: 1rem;
+      }
+
+      /* Highlight Box */
+      .highlight-box {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 150, 12, 0.1) 100%);
+        border-left: 4px solid var(--gold, #d4af37);
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+        margin: 1.5rem 0;
+      }
+
+      .highlight-box p {
+        margin: 0;
+        color: var(--black, #000);
+        font-weight: 500;
+      }
+
+      /* Contact Card - Special Styling */
+      .contact-card {
+        background: linear-gradient(135deg, var(--gold, #d4af37) 0%, var(--gold-dark, #b8860b) 100%);
+        color: var(--black, #000);
+        text-align: center;
+        padding: 3rem 2rem;
+      }
+
+      .contact-card .policy-card-header {
+        justify-content: center;
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-card .policy-icon {
+        background: var(--white, #ffffff);
+        color: var(--gold-dark, #b8860b);
+      }
+
+      .contact-card h3 {
+        color: var(--black, #000);
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2rem;
+        background: var(--white, #ffffff);
+        color: var(--black, #000);
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Terms Specific Styles */
+      .terms-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .terms-item {
+        background: var(--off-white, #f5f5f5);
+        border-radius: 16px;
+        padding: 1.5rem;
+        border-left: 4px solid var(--gold, #d4af37);
+        transition: all 0.3s ease;
+      }
+
+      .terms-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .terms-item h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1rem;
+        color: var(--black, #000);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .terms-item h4 i {
+        color: var(--gold, #d4af37);
+      }
+
+      .terms-item p {
+        font-size: 0.95rem;
+        color: var(--gray-text, #666);
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* Legal Text Styling */
+      .legal-text {
+        color: var(--gray-text, #666);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+      }
+
+      .legal-text strong {
+        color: var(--black, #000);
+      }
+
+      /* Important Notice Box */
+      .notice-box {
+        background: var(--black, #000);
+        color: var(--white, #ffffff);
+        padding: 2rem;
+        border-radius: 16px;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      .notice-box i {
+        font-size: 2.5rem;
+        color: var(--gold, #d4af37);
+        margin-bottom: 1rem;
+      }
+
+      .notice-box h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .notice-box p {
+        margin: 0;
+        opacity: 0.9;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .policy-section-card {
+          padding: 1.5rem;
+        }
+
+        .policy-content h2.heading-underline {
+          font-size: 1.8rem;
+        }
+
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .terms-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .policy-section-card {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .policy-section-card:nth-child(1) { animation-delay: 0.1s; }
+      .policy-section-card:nth-child(2) { animation-delay: 0.2s; }
+      .policy-section-card:nth-child(3) { animation-delay: 0.3s; }
+      .policy-section-card:nth-child(4) { animation-delay: 0.4s; }
+      .policy-section-card:nth-child(5) { animation-delay: 0.5s; }
+      .policy-section-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Gold Gradient Hero -->
+    <header class="hero hero-small terms-hero">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/sarasufihoneyreal.png"
+              alt="SaraSufiHoney Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">SaraSufiHoney</span>
+        </div>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="benefits.html">Benefits | Education</a></li>
+            <li><a href="reviews.html">Refund Policy</a></li>
+            <li><a href="certification.html">Certification</a></li>
+            <li><a href="blog.html">Blog | Article</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Terms of Service</h1>
+        <p>Please read these terms carefully before using the SaraSufiHoney website or placing an order.</p>
+      </div>
+    </header>
+
+    <!-- Policy Content with Card Layout -->
+    <main class="policy-page">
+      <div class="policy-content">
+        <h2 class="heading-underline">Legal Agreement</h2>
+        <p class="policy-intro">
+          This website is operated by SaraSufiHoney. By accessing the site, placing an order, 
+          or interacting with our services, you agree to be bound by these Terms of Service.
+        </p>
+
+        <!-- Overview Card -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <h3>Overview</h3>
+          </div>
+          <p class="legal-text">
+            These terms apply to all users of the site, including visitors, customers, and anyone who accesses content, products, or services provided through SaraSufiHoney.
+          </p>
+          <div class="highlight-box">
+            <p><i class="fas fa-circle-info" style="margin-right: 0.5rem;"></i> By continuing to use our website, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>
+          </div>
+        </div>
+
+        <!-- Online Store Terms & General Conditions -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3>Online Store Terms & Conditions</h3>
+          </div>
+          
+          <div class="terms-grid">
+            <div class="terms-item">
+              <h4><i class="fas fa-user-check"></i> Age Requirement</h4>
+              <p>You confirm that you are at least the age of majority in your state or country of residence, or have consent from a parent or guardian.</p>
+            </div>
+            <div class="terms-item">
+              <h4><i class="fas fa-gavel"></i> Legal Use</h4>
+              <p>You agree not to use our products for any illegal or unauthorised purpose, and not to violate any laws in your jurisdiction.</p>
+            </div>
+            <div class="terms-item">
+              <h4><i class="fas fa-ban"></i> Service Refusal</h4>
+              <p>We reserve the right to refuse service to anyone for any reason at any time, including suspected fraud or misuse.</p>
+            </div>
+            <div class="terms-item">
+              <h4><i class="fas fa-copyright"></i> Intellectual Property</h4>
+              <p>You agree not to reproduce, duplicate, copy, sell, resell, or exploit any part of the Service without written permission.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accuracy & Products Card -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-circle-check"></i>
+            </div>
+            <h3>Accuracy of Information & Products</h3>
+          </div>
+          <p class="legal-text">
+            Information on this site is provided for general information only. We aim to keep details accurate and up to date, but do not guarantee that all information is complete, current, or error‑free.
+          </p>
+          <ul>
+            <li>Product descriptions, prices, and availability may change at any time without prior notice.</li>
+            <li>Certain products may be available in limited quantities.</li>
+            <li>Returns and exchanges are handled in accordance with our <a href="refund.html" style="color: var(--gold-dark); text-decoration: none; font-weight: 600;">Refund Policy</a>.</li>
+            <li>We have made every effort to display colours and images accurately, but device variations may affect appearance.</li>
+          </ul>
+        </div>
+
+        <!-- Pricing & Payment Card -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>Pricing and Payment</h3>
+          </div>
+          <p class="legal-text">
+            Prices for products are listed in <strong>Malaysian Ringgit (MYR)</strong> unless stated otherwise and may change without notice.
+          </p>
+          <div class="highlight-box">
+            <p><i class="fas fa-shield-halved" style="margin-right: 0.5rem;"></i> You agree to provide current, complete, and accurate purchase and contact information for all orders placed so that we can process your order and contact you as needed.</p>
+          </div>
+        </div>
+
+        <!-- Third Party & User Content Card -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-share-nodes"></i>
+            </div>
+            <h3>Third‑Party Services & User Content</h3>
+          </div>
+          <p class="legal-text">
+            The site may contain links to third‑party websites or tools. These are provided for convenience, and SaraSufiHoney is not responsible for the content, policies, or practices of any third‑party site or service.
+          </p>
+          <p class="legal-text" style="margin-top: 1rem;">
+            If you send ideas, reviews, or other materials to us, you agree that we may edit, copy, publish, or use them in any medium, as long as this is done in line with applicable laws.
+          </p>
+          <ul>
+            <li>Any use of third‑party tools is at your own risk.</li>
+            <li>You are responsible for ensuring comments do not violate third-party rights.</li>
+            <li>Submitted content must not be abusive, unlawful, or misleading.</li>
+          </ul>
+        </div>
+
+        <!-- Privacy & Personal Information -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3>Privacy & Personal Information</h3>
+          </div>
+          <p class="legal-text">
+            Submission of personal information through the site is governed by our Privacy Policy. Please refer to the <a href="privacy.html" style="color: var(--gold-dark); text-decoration: none; font-weight: 600;">Privacy Policy</a> page for more details on how your information is handled.
+          </p>
+        </div>
+
+        <!-- Errors & Prohibited Uses -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-triangle-exclamation"></i>
+            </div>
+            <h3>Errors, Inaccuracies & Prohibited Uses</h3>
+          </div>
+          <p class="legal-text">
+            Occasionally there may be information on the site that contains typographical errors or omissions relating to product descriptions, pricing, promotions, or availability. We reserve the right to correct any errors and update information at any time without prior notice.
+          </p>
+          
+          <div class="notice-box">
+            <i class="fas fa-ban"></i>
+            <h4>Prohibited Activities</h4>
+            <p>You are prohibited from using the site for unlawful activity, transmitting viruses, or harassing others based on protected characteristics.</p>
+          </div>
+        </div>
+
+        <!-- Liability & Changes -->
+        <div class="policy-section-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-scale-balanced"></i>
+            </div>
+            <h3>Disclaimer & Limitation of Liability</h3>
+          </div>
+          <p class="legal-text">
+            The Service and all products are provided <strong>"as is"</strong> and <strong>"as available"</strong> without any representation, warranties, or conditions of any kind, except as required by law.
+          </p>
+          <p class="legal-text">
+            SaraSufiHoney shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of the site or products, except where such limitation is not permitted by law.
+          </p>
+          <div class="highlight-box">
+            <p><i class="fas fa-rotate" style="margin-right: 0.5rem;"></i> <strong>Changes to These Terms:</strong> SaraSufiHoney may update these Terms of Service by posting changes on this page. Continued use after changes constitutes acceptance of updated Terms.</p>
+          </div>
+        </div>
+
+        <!-- Contact Card -->
+        <div class="policy-section-card contact-card">
+          <div class="policy-card-header">
+            <div class="policy-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Questions About These Terms?</h3>
+          </div>
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">Our legal team is ready to assist you</p>
+          <div class="contact-links">
+            <a href="mailto:info@sarasufi.com" class="contact-link">
+              <i class="fas fa-envelope"></i>
+              info@sarasufi.com
+            </a>
+            <a href="https://wa.me/60134712795?text=Hi%2C%20saya%20ada%20soalan%20tentang%20Terms%20of%20Service%20SaraSufiHoney" target="_blank" class="contact-link">
+              <i class="fab fa-whatsapp"></i>
+              013‑471 2795
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>Wiki Hub</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="certification.html">Lab Report</a></li>
+            <li><a href="benefits.html">Honey Education</a></li>
+            <li><a href="orders.html">Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="blog.html">Blog & Article</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="reviews.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-brand">
+          <h4>SaraSufiHoney</h4>
+          <p>
+            We are a lifestyle honey brand that brings 100% pure, carefully
+            sourced kelulut honey from hive to home, delivering wellness in
+            every drop.
+          </p>
+        </div>
+
+        <div class="footer-column footer-social">
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/sarasufihoney?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/183qQZGTaq/?mibextid=wwXIfr"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@sarasufihoney?_r=1&_t=ZS-92hCdTRLbt7"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SaraSufiHoney. All rights reserved.</p>
+        <p>
+          <a href="refund.html">Refund Policy</a> ·
+          <a href="shipping.html">Shipping Policy</a> ·
+          <a href="privacy.html">Privacy Policy</a> ·
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

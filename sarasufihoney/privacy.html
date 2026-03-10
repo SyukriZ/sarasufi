@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - SaraSufiHoney</title>
+    <link rel="icon" type="image/png" href="images/toplogo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <style>
+      /* Privacy Policy Specific Styles - Enhanced UI/UX */
+      
+      /* Hero with Gold Gradient */
+      .privacy-hero {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.95) 0%,
+          rgba(184, 150, 12, 0.95) 50%,
+          rgba(160, 130, 10, 0.95) 100%
+        );
+      }
+
+      /* Policy Layout */
+      .policy-layout {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 4rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 5%;
+      }
+
+      /* Sticky Table of Contents */
+      .policy-toc {
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+        background: var(--white, #ffffff);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--gray-light, #e5e5e5);
+      }
+
+      .toc-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--gold, #d4af37);
+      }
+
+      .toc-header i {
+        color: var(--gold, #d4af37);
+        font-size: 1.25rem;
+      }
+
+      .toc-header h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        color: var(--black, #000);
+        margin: 0;
+      }
+
+      .toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .toc-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      .toc-list a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        color: var(--gray-text, #666);
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+      }
+
+      .toc-list a:hover {
+        background: rgba(212, 175, 55, 0.1);
+        color: var(--gold-dark, #b8860b);
+      }
+
+      .toc-list a.active {
+        background: var(--gold, #d4af37);
+        color: var(--black, #000);
+        font-weight: 600;
+      }
+
+      .toc-list a i {
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+
+      /* Policy Content */
+      .policy-content-wrapper {
+        background: var(--white, #ffffff);
+        border-radius: 24px;
+        padding: 3rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .policy-section {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--gray-light, #e5e5e5);
+        scroll-margin-top: 2rem;
+      }
+
+      .policy-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .policy-section h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        color: var(--black, #000);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .policy-section h2 .section-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: rgba(212, 175, 55, 0.1);
+        color: var(--gold, #d4af37);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+      }
+
+      .policy-section h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.3rem;
+        color: var(--black, #000);
+        margin: 2rem 0 1rem;
+        font-weight: 600;
+      }
+
+      .policy-section p {
+        color: var(--gray-text, #666);
+        line-height: 1.8;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .policy-section ul {
+        margin: 1rem 0 1.5rem 1.5rem;
+        color: var(--gray-text, #666);
+      }
+
+      .policy-section ul li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+        position: relative;
+      }
+
+      .policy-section ul li::marker {
+        color: var(--gold, #d4af37);
+      }
+
+      /* Highlight Boxes */
+      .policy-highlight {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+        border-left: 4px solid var(--gold, #d4af37);
+        padding: 1.5rem;
+        border-radius: 0 12px 12px 0;
+        margin: 1.5rem 0;
+      }
+
+      .policy-highlight p {
+        margin: 0;
+        color: var(--black, #000);
+        font-weight: 500;
+      }
+
+      /* Contact Card */
+      .policy-contact-card {
+        background: var(--black, #000);
+        color: var(--white, #ffffff);
+        border-radius: 16px;
+        padding: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+
+      .policy-contact-card h3 {
+        color: var(--gold, #d4af37);
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 1rem;
+      }
+
+      .policy-contact-card p {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-methods {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-method-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.5rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .contact-method-btn.email {
+        background: var(--gold, #d4af37);
+        color: var(--black, #000);
+      }
+
+      .contact-method-btn.whatsapp {
+        background: #25d366;
+        color: white;
+      }
+
+      .contact-method-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Last Updated Badge */
+      .last-updated {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--off-white, #f5f5f5);
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        color: var(--gray-text, #666);
+        margin-bottom: 2rem;
+      }
+
+      .last-updated i {
+        color: var(--gold, #d4af37);
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .policy-layout {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .policy-toc {
+          position: relative;
+          top: 0;
+          order: -1;
+        }
+
+        .toc-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .toc-list li {
+          margin: 0;
+        }
+
+        .toc-list a {
+          padding: 0.5rem 1rem;
+          font-size: 0.85rem;
+          white-space: nowrap;
+        }
+
+        .toc-list a i {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .policy-content-wrapper {
+          padding: 1.5rem;
+        }
+
+        .policy-section h2 {
+          font-size: 1.4rem;
+        }
+
+        .policy-section h2 .section-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
+        }
+
+        .contact-methods {
+          flex-direction: column;
+        }
+
+        .contact-method-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Print Styles */
+      @media print {
+        .policy-toc,
+        .hero {
+          display: none;
+        }
+
+        .policy-content-wrapper {
+          box-shadow: none;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with same menu -->
+    <header class="hero hero-small privacy-hero">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/sarasufihoneyreal.png"
+              alt="SaraSufiHoney Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">SaraSufiHoney</span>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="benefits.html">Benefits | Education</a></li>
+          <li><a href="reviews.html">Refund Policy</a></li>
+          <li><a href="certification.html">Certification</a></li>
+          <li><a href="blog.html">Blog | Article</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Privacy Policy</h1>
+        <p>
+          Learn how SaraSufiHoney collects, uses, and protects your personal
+          information.
+        </p>
+      </div>
+    </header>
+
+    <!-- Privacy content -->
+    <main class="policy-page">
+      <div class="policy-layout">
+        
+        <!-- Sticky Table of Contents -->
+        <aside class="policy-toc">
+          <div class="toc-header">
+            <i class="fas fa-list-ul"></i>
+            <h3>Contents</h3>
+          </div>
+          <ul class="toc-list">
+            <li><a href="#introduction" class="active"><i class="fas fa-chevron-right"></i> Introduction</a></li>
+            <li><a href="#information"><i class="fas fa-chevron-right"></i> Information We Collect</a></li>
+            <li><a href="#usage"><i class="fas fa-chevron-right"></i> How We Use Info</a></li>
+            <li><a href="#sharing"><i class="fas fa-chevron-right"></i> Sharing of Info</a></li>
+            <li><a href="#retention"><i class="fas fa-chevron-right"></i> Data Retention</a></li>
+            <li><a href="#rights"><i class="fas fa-chevron-right"></i> Your Rights</a></li>
+            <li><a href="#cookies"><i class="fas fa-chevron-right"></i> Cookies</a></li>
+            <li><a href="#changes"><i class="fas fa-chevron-right"></i> Policy Changes</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="policy-content-wrapper">
+          
+          <div class="last-updated">
+            <i class="fas fa-calendar-alt"></i>
+            Last Updated: January 2026
+          </div>
+
+          <section class="policy-section" id="introduction">
+            <h2>
+              <span class="section-icon"><i class="fas fa-shield-alt"></i></span>
+              Introduction
+            </h2>
+            <p>
+              Thank you for visiting SaraSufiHoney. Your privacy and the security of
+              your personal information are important to us. This Privacy Policy explains
+              how information is collected, used, and protected when you interact
+              with SaraSufiHoney online.
+            </p>
+            <div class="policy-highlight">
+              <p><i class="fas fa-info-circle" style="color: var(--gold); margin-right: 0.5rem;"></i> By using our website and services, you agree to the collection and use of information in accordance with this policy.</p>
+            </div>
+          </section>
+
+          <section class="policy-section" id="information">
+            <h2>
+              <span class="section-icon"><i class="fas fa-database"></i></span>
+              Information We Collect
+            </h2>
+            <p>
+              When you contact us, place an order, or interact with our pages, we
+              may collect information such as:
+            </p>
+            <ul>
+              <li>Your name and contact details (phone number, email address)</li>
+              <li>Delivery address and order details</li>
+              <li>Payment information (processed securely through our payment providers)</li>
+              <li>Communication preferences and history</li>
+            </ul>
+            <p>
+              Technical information such as browser type, device information, and
+              general location (for example, city or country) may also be collected
+              through analytics tools to help improve the website experience.
+            </p>
+          </section>
+
+          <section class="policy-section" id="usage">
+            <h2>
+              <span class="section-icon"><i class="fas fa-tasks"></i></span>
+              How We Use Your Information
+            </h2>
+            <p>Your information may be used to:</p>
+            <ul>
+              <li>Process and deliver your orders and respond to enquiries</li>
+              <li>Provide order updates, shipping notifications, or support</li>
+              <li>Improve products, services, and website content based on feedback and usage</li>
+              <li>Share important updates, promotions, or announcements if you choose to receive them</li>
+              <li>Comply with legal obligations and prevent fraudulent activities</li>
+            </ul>
+          </section>
+
+          <section class="policy-section" id="sharing">
+            <h2>
+              <span class="section-icon"><i class="fas fa-share-alt"></i></span>
+              Sharing of Information
+            </h2>
+            <p>
+              SaraSufiHoney does not sell your personal information. Your data may
+              be shared only with trusted service providers, such as delivery
+              partners or payment processors, when needed to complete your order.
+            </p>
+            <p>
+              In certain situations, information may also be shared to comply with
+              legal obligations or valid requests from authorities.
+            </p>
+            <div class="policy-highlight">
+              <p><i class="fas fa-lock" style="color: var(--gold); margin-right: 0.5rem;"></i> We implement strict security measures to protect your data when shared with third-party service providers.</p>
+            </div>
+          </section>
+
+          <section class="policy-section" id="retention">
+            <h2>
+              <span class="section-icon"><i class="fas fa-clock"></i></span>
+              Data Retention
+            </h2>
+            <p>
+              Order and contact records may be kept for as long as necessary to
+              support customer service, accounting, or legal requirements. Typically, we retain your personal information for:
+            </p>
+            <ul>
+              <li>Active orders: Duration of order processing plus 2 years</li>
+              <li>Marketing preferences: Until you opt out or request deletion</li>
+              <li>Legal records: As required by applicable Malaysian law</li>
+            </ul>
+            <p>
+              If you would like your information to be updated or removed, you may contact
+              the team using the details below.
+            </p>
+          </section>
+
+          <section class="policy-section" id="rights">
+            <h2>
+              <span class="section-icon"><i class="fas fa-user-shield"></i></span>
+              Your Rights
+            </h2>
+            <p>
+              You have the right to:
+            </p>
+            <ul>
+              <li>Request access to the personal information we hold about you</li>
+              <li>Ask for corrections if any details are inaccurate or incomplete</li>
+              <li>Request deletion of your personal data (subject to legal obligations)</li>
+              <li>Object to certain types of processing</li>
+              <li>Withdraw consent for marketing communications at any time</li>
+            </ul>
+            <p>
+              Where applicable, you may also request that certain information be
+              deleted, subject to any legal or operational obligations that require
+              the data to be retained for a period of time.
+            </p>
+          </section>
+
+          <section class="policy-section" id="cookies">
+            <h2>
+              <span class="section-icon"><i class="fas fa-cookie-bite"></i></span>
+              Cookies & Analytics
+            </h2>
+            <p>
+              The website may use cookies and similar technologies to remember your
+              preferences and understand how visitors use the site. You can usually
+              manage cookies through your browser settings.
+            </p>
+            <p>
+              We use analytics tools to help us understand website traffic and usage patterns. This data is anonymized and used solely for improving our services.
+            </p>
+          </section>
+
+          <section class="policy-section" id="changes">
+            <h2>
+              <span class="section-icon"><i class="fas fa-sync-alt"></i></span>
+              Changes to This Policy
+            </h2>
+            <p>
+              This Privacy Policy may be updated from time to time to reflect
+              changes in practices, services, or legal requirements. The latest
+              version will always be available on this page.
+            </p>
+            <p>
+              We encourage you to review this policy periodically for any changes. Significant changes will be notified via email or a prominent notice on our website.
+            </p>
+          </section>
+
+          <section class="policy-section" id="contact">
+            <h2>
+              <span class="section-icon"><i class="fas fa-envelope"></i></span>
+              Contact Us
+            </h2>
+            <p>
+              If you have any questions about this Privacy Policy, or if you would
+              like to access, update, or request removal of your personal data,
+              please reach out to us:
+            </p>
+            
+            <div class="policy-contact-card">
+              <h3>We're Here to Help</h3>
+              <p>Our team is ready to assist you with any privacy-related questions or requests.</p>
+              <div class="contact-methods">
+                <a href="mailto:info@sarasufi.com" class="contact-method-btn email">
+                  <i class="fas fa-envelope"></i>
+                  info@sarasufi.com
+                </a>
+                <a href="https://wa.me/60134712795?text=Hi%2C%20saya%20ada%20soalan%20tentang%20privacy%20policy%20SaraSufiHoney" target="_blank" class="contact-method-btn whatsapp">
+                  <i class="fab fa-whatsapp"></i>
+                  WhatsApp Us
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h4>Wiki Hub</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="certification.html">Lab Report</a></li>
+            <li><a href="benefits.html">Honey Education</a></li>
+            <li><a href="orders.html">Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="blog.html">Blog & Article</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="reviews.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-brand">
+          <h4>SaraSufiHoney</h4>
+          <p>
+            We are a lifestyle honey brand that brings 100% pure, carefully
+            sourced kelulut honey from hive to home, delivering wellness in
+            every drop.
+          </p>
+        </div>
+
+        <div class="footer-column footer-social">
+          <h4>Social</h4>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/sarasufihoney?igsh=YXA5ZnU3MDhydGdu"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/183qQZGTaq/?mibextid=wwXIfr"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@sarasufihoney?_r=1&_t=ZS-92hCdTRLbt7"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SaraSufiHoney. All rights reserved.</p>
+        <p>
+          <a href="refund.html">Refund Policy</a> ·
+          <a href="shipping.html">Shipping Policy</a> ·
+          <a href="privacy.html">Privacy Policy</a> ·
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Table of Contents Active State Management
+      const sections = document.querySelectorAll('.policy-section');
+      const tocLinks = document.querySelectorAll('.toc-list a');
+
+      // Intersection Observer for scroll spy
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -80% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(section => observer.observe(section));
+
+      // Smooth scroll for TOC links
+      tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

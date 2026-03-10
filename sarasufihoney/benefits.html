@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benefits & Education - SaraSufiHoney</title>
+    <link rel="icon" type="image/png" href="images/toplogo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <style>
+/* ==========================================
+   BENEFITS PAGE STYLES - About Us Design Style
+   ========================================== */
+
+/* Hero - About Us Style */
+.benefits-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.95) 0%,
+    rgba(184, 150, 12, 0.95) 50%,
+    rgba(160, 130, 10, 0.95) 100%
+  );
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 5% 4rem;
+  position: relative;
+}
+
+/* Transparent with border */
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 0.6rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* About Us Style Stats - Updated with white color and hover effects */
+.benefits-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+
+.benefit-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow background on hover */
+.benefit-stat::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.benefit-stat:hover::before {
+  width: 150px;
+  height: 150px;
+}
+
+.benefit-stat i {
+  font-size: 1.75rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.benefit-stat span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover animations */
+.benefit-stat:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-stat:hover i {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8)) 
+          drop-shadow(0 0 24px rgba(255, 255, 255, 0.4));
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.benefit-stat:hover span {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+               0 0 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+}
+
+/* Pulse animation for icon */
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 24px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 32px rgba(255, 255, 255, 0.6));
+  }
+}
+
+/* Section Label - Clean About Us Style */
+.section-label {
+  display: block;
+  text-align: center;
+  color: #b8860b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-dark .section-label {
+  color: #d4af37;
+}
+
+/* Heading - Clean About Us Style */
+.heading-underline {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.section-dark .heading-underline {
+  color: #ffffff;
+}
+
+/* Remove underline decoration for cleaner look */
+.heading-underline::after {
+  display: none;
+}
+
+/* Section Base */
+.section {
+  padding: 5rem 0;
+}
+
+.section-light {
+  background: #f5f5f5;
+}
+
+.section-dark {
+  background: #000000;
+  color: #ffffff;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+/* Intro Section - Clean Style */
+.section-intro {
+  background: #ffffff;
+  padding: 5rem 5%;
+}
+
+.section-intro-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-intro-inner > p {
+  color: #666666;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+/* Honey Comparison - Clean Cards */
+.honey-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comparison-col {
+  background: #f9f9f9;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+}
+
+.comparison-col.kelulut {
+  background: #ffffff;
+  border: 2px solid #d4af37;
+}
+
+.comparison-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.comparison-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.comparison-col li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #555555;
+  font-size: 0.95rem;
+}
+
+.comparison-col li i {
+  font-size: 0.875rem;
+  color: #d4af37;
+}
+
+.comparison-col.regular li i {
+  color: #dc2626;
+}
+
+.comparison-vs {
+  width: 50px;
+  height: 50px;
+  background: #ffffff;
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: #b8860b;
+  font-size: 0.8rem;
+}
+
+/* Benefits Grid - Clean About Us Style */
+.benefits-detailed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.benefit-detailed-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-icon-wrap {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon-wrap i {
+  font-size: 2.5rem;
+}
+
+/* Icon Colors - Clean solid backgrounds */
+.benefit-icon-wrap.immunity {
+  background: #dbeafe;
+}
+.benefit-icon-wrap.immunity i { color: #2563eb; }
+
+.benefit-icon-wrap.sweetener {
+  background: #fce7f3;
+}
+.benefit-icon-wrap.sweetener i { color: #db2777; }
+
+.benefit-icon-wrap.energy {
+  background: #fef3c7;
+}
+.benefit-icon-wrap.energy i { color: #d97706; }
+
+.benefit-icon-wrap.comfort {
+  background: #d1fae5;
+}
+.benefit-icon-wrap.comfort i { color: #059669; }
+
+/* NEW: Digestive Health - Purple */
+.benefit-icon-wrap.digestive {
+  background: #ede9fe;
+}
+.benefit-icon-wrap.digestive i { color: #7c3aed; }
+
+/* NEW: Skin Health - Teal */
+.benefit-icon-wrap.skin {
+  background: #ccfbf1;
+}
+.benefit-icon-wrap.skin i { color: #0d9488; }
+
+.benefit-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.benefit-content p {
+  color: #666666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.benefit-cta {
+  margin-top: auto;
+}
+
+.btn-text {
+  color: #b8860b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.usage-tag {
+  display: inline-block;
+  background: #f5f5f5;
+  color: #666666;
+  padding: 0.4rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Timeline Section - Clean Style */
+.benefits-timeline-section {
+  padding: 5rem 5%;
+}
+
+.day-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.time-block {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.time-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-icon i {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.time-block.morning .time-icon i {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.time-block.afternoon .time-icon i {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.time-block.evening .time-icon i {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.time-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666666;
+}
+
+.time-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #b8860b;  /* Golden - matches pairing items */
+  margin-bottom: 0.375rem;
+  font-weight: 600;
+}
+
+.time-content p {
+  color: #555555;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.time-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #b8860b;
+  font-weight: 500;
+}
+
+.time-tip i {
+  color: #d4af37;
+  font-size: 0.875rem;
+}
+
+/* Safety Accordion - Clean Style */
+.safety-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.safety-item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+
+.safety-question {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.safety-icon {
+  width: 40px;
+  height: 40px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b8860b;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.safety-question h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #000000;
+  flex: 1;
+  font-weight: 600;
+}
+
+.toggle-icon {
+  color: #999999;
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+}
+
+.safety-item.active .toggle-icon {
+  transform: rotate(180deg);
+  color: #b8860b;
+}
+
+.safety-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.safety-item.active .safety-answer {
+  max-height: 200px;
+}
+
+.safety-answer p {
+  padding: 0 1.5rem 1.25rem 4rem;
+  color: #666666;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Pairing Section - Clean Style */
+.pairing-section {
+  padding: 5rem 5%;
+}
+
+.pairing-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.pairing-tab {
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.pairing-tab.active {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #000000;
+  font-weight: 600;
+}
+
+.pairing-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pairing-panel {
+  display: none;
+}
+
+.pairing-panel.active {
+  display: block;
+}
+
+.pairing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.pairing-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.pairing-item i {
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin-bottom: 0.75rem;
+}
+
+/* Pairing items */
+.pairing-item h4 {
+  font-family: 'Playfair Display', serif;
+  color: #b8860b;  /* Golden */
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.pairing-item p {
+  color: #555555;
+  font-size: 0.8rem;
+}
+
+/* CTA Section - Clean About Us Style */
+.section-cta {
+  background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+  padding: 5rem 5%;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-cta .section-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.section-cta .heading-underline {
+  color: #000000;
+}
+
+.cta-content > p {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #000000;
+  color: #d4af37;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #000000;
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .benefits-hero-stats {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .benefit-stat {
+    padding: 1rem;
+    min-width: 100px;
+  }
+
+  .heading-underline {
+    font-size: 2rem;
+  }
+
+  .honey-comparison {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .comparison-vs {
+    order: -1;
+    margin: 0 auto;
+  }
+
+  .time-block {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .safety-answer p {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Header + Navigation -->
+    <header class="hero hero-small benefits-hero">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/sarasufihoneyreal.png"
+              alt="SaraSufiHoney Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">SaraSufiHoney</span>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="benefits.html" class="nav-active">Benefits | Education</a></li>
+          <li><a href="reviews.html">Refund Policy</a></li>
+          <li><a href="certification.html">Certification</a></li>
+          <li><a href="blog.html">Blog | Article</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <span class="hero-badge">Learn & Discover</span>
+        <h1>Benefits & Education</h1>
+        <p class="hero-subtitle">
+          Learn how kelulut honey supports your daily routine – from immunity
+          and energy to simple swaps in your kitchen.
+        </p>
+        <div class="benefits-hero-stats">
+          <div class="benefit-stat">
+            <i class="fas fa-heart-pulse"></i>
+            <span>Wellness</span>
+          </div>
+          <div class="benefit-stat">
+            <i class="fas fa-bolt"></i>
+            <span>Energy</span>
+          </div>
+          <div class="benefit-stat">
+            <i class="fas fa-shield-virus"></i>
+            <span>Immunity</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Intro -->
+    <section class="section-intro">
+      <div class="section-intro-inner">
+        <span class="section-label">The Honey</span>
+        <h2 class="heading-underline">Why Kelulut Honey?</h2>
+        <p>
+          Kelulut (stingless-bee) honey is naturally tangy, rich in plant
+          compounds, and easy to enjoy as part of a balanced lifestyle. Here are
+          simple ways to make it work for you.
+        </p>
+        <div class="honey-comparison">
+          <div class="comparison-col regular">
+            <h4>Regular Honey</h4>
+            <ul>
+              <li><i class="fas fa-xmark"></i> Overly sweet</li>
+              <li><i class="fas fa-xmark"></i> Common processing</li>
+              <li><i class="fas fa-xmark"></i> Standard flavor</li>
+            </ul>
+          </div>
+          <div class="comparison-vs">VS</div>
+          <div class="comparison-col kelulut">
+            <h4>Kelulut Honey</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Tangy & complex</li>
+              <li><i class="fas fa-check"></i> Natural compounds</li>
+              <li><i class="fas fa-check"></i> Unique taste</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily benefits grid -->
+    <section class="section section-light">
+      <span class="section-label">Daily Use</span>
+      <h2 class="heading-underline">Everyday Benefits</h2>
+      <p class="section-subtitle">
+        Focus on small, consistent habits – a spoon a day is easier to keep than
+        big changes overnight.
+      </p>
+
+      <div class="benefits-detailed-grid">
+        <!-- Original 4 cards -->
+        <div class="benefit-detailed-card">
+          <div class="benefit-icon-wrap immunity">
+            <i class="fas fa-shield-heart"></i>
+          </div>
+          <div class="benefit-content">
+            <h3>Gentle Daily Immunity</h3>
+            <p>
+              Take 1–2 teaspoons in warm (not hot) water in the morning as a daily
+              wellness ritual.
+            </p>
+            <div class="benefit-cta">
+              <a href="blog-immunity.html" class="btn-text">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-detailed-card">
+          <div class="benefit-icon-wrap sweetener">
+            <i class="fas fa-cookie-bite"></i>
+          </div>
+          <div class="benefit-content">
+            <h3>Natural Sweetener Swap</h3>
+            <p>
+              Replace refined sugar in tea, coffee, smoothies, and desserts for a
+              more flavourful tang.
+            </p>
+            <div class="benefit-cta">
+              <span class="usage-tag">Zero guilt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-detailed-card">
+          <div class="benefit-icon-wrap energy">
+            <i class="fas fa-battery-full"></i>
+          </div>
+          <div class="benefit-content">
+            <h3>On-The-Go Energy</h3>
+            <p>
+              Enjoy a spoon straight from the jar before long drives, late-night
+              study, or busy workdays.
+            </p>
+            <div class="benefit-cta">
+              <a href="blog-energy.html" class="btn-text">Read more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-detailed-card">
+          <div class="benefit-icon-wrap comfort">
+            <i class="fas fa-mug-hot"></i>
+          </div>
+          <div class="benefit-content">
+            <h3>Sore Throat Comfort</h3>
+            <p>
+              Mix with warm water or herbal tea to gently soothe dryness after a
+              long day of talking.
+            </p>
+            <div class="benefit-cta">
+              <span class="usage-tag">Instant relief</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEW: 2 additional cards -->
+        <div class="benefit-detailed-card">
+          <div class="benefit-icon-wrap digestive">
+            <i class="fas fa-apple-whole"></i>
+          </div>
+          <div class="benefit-content">
+            <h3>Digestive Wellness</h3>
+            <p>
+              Rich in natural enzymes that support healthy digestion and gut flora balance.
+            </p>
+            <div class="benefit-cta">
+              <span class="usage-tag">Gut friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefit-detailed-card">
+          <div class="benefit-icon-wrap skin">
+            <i class="fas fa-spa"></i>
+          </div>
+          <div class="benefit-content">
+            <h3>Natural Skin Glow</h3>
+            <p>
+              Antioxidant properties help promote healthy, radiant skin from within.
+            </p>
+            <div class="benefit-cta">
+              <span class="usage-tag">Beauty boost</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to use by time of day -->
+    <section class="section section-dark benefits-timeline-section">
+      <span class="section-label">Your Routine</span>
+      <h2 class="heading-underline">How To Use In Your Day</h2>
+      
+      <div class="day-timeline">
+        <div class="time-block morning">
+          <div class="time-icon">
+            <i class="fas fa-sun"></i>
+            <span class="time-label">Morning</span>
+          </div>
+          <div class="time-content">
+            <h3>Start Your Day Right</h3>
+            <p>Begin with warm water + a spoon of honey on an empty stomach or before breakfast.</p>
+            <div class="time-tip">
+              <i class="fas fa-lightbulb"></i>
+              <span>Best absorbed on empty stomach</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-block afternoon">
+          <div class="time-icon">
+            <i class="fas fa-cloud-sun"></i>
+            <span class="time-label">Afternoon</span>
+          </div>
+          <div class="time-content">
+            <h3>Refresh & Recharge</h3>
+            <p>Add to iced lemon water or smoothies for a refreshing pick-me-up instead of sugary drinks.</p>
+            <div class="time-tip">
+              <i class="fas fa-lightbulb"></i>
+              <span>Great alternative to energy drinks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-block evening">
+          <div class="time-icon">
+            <i class="fas fa-moon"></i>
+            <span class="time-label">Evening</span>
+          </div>
+          <div class="time-content">
+            <h3>Gentle Wind Down</h3>
+            <p>Drizzle on yoghurt, toast, or desserts as a lighter way to end the day.</p>
+            <div class="time-tip">
+              <i class="fas fa-lightbulb"></i>
+              <span>Promotes relaxation before sleep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety & Guidelines -->
+    <section class="section section-light">
+      <span class="section-label">Safety First</span>
+      <h2 class="heading-underline">Safety & Simple Guidelines</h2>
+      
+      <div class="safety-accordion">
+        <div class="safety-item">
+          <div class="safety-question">
+            <div class="safety-icon">
+              <i class="fas fa-baby"></i>
+            </div>
+            <h3>Who should avoid honey?</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="safety-answer">
+            <p>Honey is not recommended for infants under 12 months due to the risk of botulism. Always follow your doctor's advice if you have specific health conditions or allergies.</p>
+          </div>
+        </div>
+
+        <div class="safety-item">
+          <div class="safety-question">
+            <div class="safety-icon">
+              <i class="fas fa-scale-balanced"></i>
+            </div>
+            <h3>How much per day?</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="safety-answer">
+            <p>Most adults enjoy 1–2 tablespoons a day as part of a balanced diet. For children over 1 year, use smaller amounts (1 teaspoon). Remember: moderation is key.</p>
+          </div>
+        </div>
+
+        <div class="safety-item">
+          <div class="safety-question">
+            <div class="safety-icon">
+              <i class="fas fa-user-doctor"></i>
+            </div>
+            <h3>Diabetic customers</h3>
+            <i class="fas fa-chevron-down toggle-icon"></i>
+          </div>
+          <div class="safety-answer">
+            <p>Kelulut honey is still a form of sugar. Enjoy in moderation and only according to your healthcare professional's guidance. Monitor your blood sugar levels accordingly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pairing suggestions -->
+    <section class="section section-dark pairing-section">
+      <span class="section-label">Inspiration</span>
+      <h2 class="heading-underline">Tasty Ways To Enjoy</h2>
+      
+      <div class="pairing-tabs">
+        <button class="pairing-tab active" data-tab="drinks">
+          <i class="fas fa-mug-hot"></i>
+          <span>Drinks</span>
+        </button>
+        <button class="pairing-tab" data-tab="food">
+          <i class="fas fa-utensils"></i>
+          <span>Food</span>
+        </button>
+        <button class="pairing-tab" data-tab="gifting">
+          <i class="fas fa-gift"></i>
+          <span>Gifting</span>
+        </button>
+      </div>
+
+      <div class="pairing-content">
+        <div class="pairing-panel active" id="drinks">
+          <div class="pairing-grid">
+            <div class="pairing-item">
+              <i class="fas fa-mug-hot"></i>
+              <h4>Warm Honey Water</h4>
+              <p>Classic morning starter</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-lemon"></i>
+              <h4>Honey Lemon</h4>
+              <p>Refreshing immunity boost</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-leaf"></i>
+              <h4>Herbal Teas</h4>
+              <p>Chamomile, ginger, or green tea</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-blender"></i>
+              <h4>Smoothies</h4>
+              <p>Natural sweetener for blends</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-coffee"></i>
+              <h4>Iced Lattes</h4>
+              <p>Drizzle over your favorite coffee</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pairing-panel" id="food">
+          <div class="pairing-grid">
+            <div class="pairing-item">
+              <i class="fas fa-spoon"></i>
+              <h4>Yoghurt Bowls</h4>
+              <p>With fruits and granola</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-wheat-awn"></i>
+              <h4>Oats & Porridge</h4>
+              <p>Natural morning sweetness</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-bread-slice"></i>
+              <h4>Roti Bakar</h4>
+              <p>Malaysian favorite</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-bowl-food"></i>
+              <h4>Salad Dressings</h4>
+              <p>Tangy vinaigrette base</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-drumstick-bite"></i>
+              <h4>Marinades</h4>
+              <p>For chicken or seafood</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pairing-panel" id="gifting">
+          <div class="pairing-grid">
+            <div class="pairing-item">
+              <i class="fas fa-mosque"></i>
+              <h4>Raya Hampers</h4>
+              <p>Festive gift boxes</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-house-chimney"></i>
+              <h4>House-warming</h4>
+              <p>Warm welcome gifts</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-briefcase"></i>
+              <h4>Corporate</h4>
+              <p>Professional wellness gifts</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-apple-whole"></i>
+              <h4>Teachers' Gifts</h4>
+              <p>Appreciation hampers</p>
+            </div>
+            <div class="pairing-item">
+              <i class="fas fa-heart"></i>
+              <h4>Get Well Soon</h4>
+              <p>Caring recovery bundles</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-cta">
+      <div class="cta-content">
+        <span class="section-label">Get Started</span>
+        <h2 class="heading-underline">Ready To Make It A Habit?</h2>
+        <p>
+          Start with one jar of Daily Golden Kelulut, then explore Royal Black and
+          our gift boxes as you fall in love with the taste.
+        </p>
+        <div class="btn-row">
+          <a href="products.html" class="btn-secondary">Explore Products</a>
+          <a href="reviews.html" class="btn-primary">See Customer Results</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-column footer-brand">
+          <div class="footer-logo">
+            <img src="images/sarasufihoneyreal.png" alt="SaraSufiHoney" />
+            <span>SaraSufiHoney</span>
+          </div>
+          <p>
+            We are a lifestyle honey brand that brings 100% pure, carefully
+            sourced kelulut honey from hive to home.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Wiki Hub</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="certification.html">Lab Report</a></li>
+            <li><a href="benefits.html">Honey Education</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="blog.html">Blog & Article</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+          <h4>Connect With Us</h4>
+          <p>Follow us for daily honey tips</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/sarasufihoney" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/share/183qQZGTaq" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@sarasufihoney" target="_blank" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SaraSufiHoney. All rights reserved.</p>
+        <p>
+          <a href="refund.html">Refund Policy</a> ·
+          <a href="shipping.html">Shipping Policy</a> ·
+          <a href="privacy.html">Privacy Policy</a> ·
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+          menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+        }
+
+        // Safety accordion
+        const safetyItems = document.querySelectorAll('.safety-item');
+        safetyItems.forEach(item => {
+          const question = item.querySelector('.safety-question');
+          question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all others
+            safetyItems.forEach(otherItem => {
+              otherItem.classList.remove('active');
+            });
+            
+            // Toggle current
+            if (!isActive) {
+              item.classList.add('active');
+            }
+          });
+        });
+
+        // Pairing tabs
+        const pairingTabs = document.querySelectorAll('.pairing-tab');
+        const pairingPanels = document.querySelectorAll('.pairing-panel');
+
+        pairingTabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+            
+            // Remove active from all tabs
+            pairingTabs.forEach(t => t.classList.remove('active'));
+            // Add active to clicked tab
+            tab.classList.add('active');
+            
+            // Hide all panels
+            pairingPanels.forEach(panel => panel.classList.remove('active'));
+            // Show target panel
+            document.getElementById(targetTab).classList.add('active');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

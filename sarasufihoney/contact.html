@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - SaraSufiHoney</title>
+    <link rel="icon" type="image/png" href="images/toplogo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <style>
+      /* CSS Variables */
+      :root {
+        --gold: #d4af37;
+        --gold-dark: #b8860b;
+        --gold-light: #f4e4a6;
+        --gold-glow: rgba(212, 175, 55, 0.6);
+        --black: #000000;
+        --white: #ffffff;
+        --gray-text: #666666;
+        --gray-light: #e5e5e5;
+        --off-white: #f5f5f5;
+        --success: #22c55e;
+        --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Contact Page Enhanced Styles */
+      .contact-hero {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.95) 0%,
+          rgba(184, 150, 12, 0.95) 50%,
+          rgba(160, 130, 10, 0.95) 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      /* Floating Contact Cards */
+      .contact-float-section {
+        margin-top: -100px;
+        position: relative;
+        z-index: 10;
+        padding: 0 5%;
+      }
+
+      .contact-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+      }
+
+      .contact-float-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid var(--gray-light);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+      }
+
+      .contact-float-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-float-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--gold);
+      }
+
+      .contact-float-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      /* Updated Icon Styles - Pastel Backgrounds */
+      .float-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        margin: 0 auto 1.25rem;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .contact-float-card:hover .float-icon {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      /* WhatsApp - Light Green */
+      .float-icon.whatsapp {
+        background: #e8f5e9;
+        border: 2px solid #4caf50;
+        color: #25d366;
+      }
+
+      .contact-float-card:hover .float-icon.whatsapp {
+        background: #25d366;
+        color: white;
+        border-color: #25d366;
+      }
+
+      /* Email - Light Pink/Red */
+      .float-icon.email {
+        background: #ffebee;
+        border: 2px solid #ef5350;
+        color: #ea4335;
+      }
+
+      .contact-float-card:hover .float-icon.email {
+        background: #ea4335;
+        color: white;
+        border-color: #ea4335;
+      }
+
+      /* Phone - Light Blue */
+      .float-icon.phone {
+        background: #e3f2fd;
+        border: 2px solid #42a5f5;
+        color: #4285f4;
+      }
+
+      .contact-float-card:hover .float-icon.phone {
+        background: #4285f4;
+        color: white;
+        border-color: #4285f4;
+      }
+
+      /* Location - Light Pink/Red */
+      .float-icon.location {
+        background: #ffebee;
+        border: 2px solid #ef5350;
+        color: #ea4335;
+      }
+
+      .contact-float-card:hover .float-icon.location {
+        background: #ea4335;
+        color: white;
+        border-color: #ea4335;
+      }
+
+      .float-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.25rem;
+        color: var(--black);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .float-detail {
+        color: var(--gray-text);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .float-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: var(--gold-dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        padding: 0.75rem 1.5rem;
+        border-radius: 25px;
+        background: rgba(212, 175, 55, 0.1);
+        border: 2px solid transparent;
+        min-width: 140px;
+        margin-top: auto;
+      }
+
+      .float-link:hover {
+        background: var(--gold);
+        color: var(--black);
+        transform: translateX(5px);
+        border-color: var(--gold-dark);
+      }
+
+      /* Main Contact Layout */
+      .contact-main-section {
+        padding: 4rem 5%;
+        background: var(--off-white);
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: start;
+      }
+
+      /* Company Info Panel */
+      .company-info-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--gray-light);
+        position: sticky;
+        top: 2rem;
+      }
+
+      .company-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px dashed var(--gray-light);
+      }
+
+      /* Gold Bubble with Logo */
+      .company-logo-bubble {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #f4e4a6 0%, #d4af37 40%, #b8860b 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        box-shadow: 
+          0 0 0 10px rgba(212, 175, 55, 0.1),
+          0 0 0 20px rgba(212, 175, 55, 0.05),
+          0 0 60px rgba(212, 175, 55, 0.4),
+          inset -5px -5px 20px rgba(0, 0, 0, 0.1),
+          inset 5px 5px 20px rgba(255, 255, 255, 0.5);
+        position: relative;
+        animation: pulse-glow 3s ease-in-out infinite;
+        overflow: hidden;
+      }
+
+      .company-logo-bubble::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+        animation: shimmer 4s linear infinite;
+      }
+
+      .company-logo-bubble::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        width: 25%;
+        height: 25%;
+        background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(2px);
+      }
+
+      @keyframes pulse-glow {
+        0%, 100% {
+          box-shadow: 
+            0 0 0 10px rgba(212, 175, 55, 0.1),
+            0 0 0 20px rgba(212, 175, 55, 0.05),
+            0 0 60px rgba(212, 175, 55, 0.4),
+            inset -5px -5px 20px rgba(0, 0, 0, 0.1),
+            inset 5px 5px 20px rgba(255, 255, 255, 0.5);
+        }
+        50% {
+          box-shadow: 
+            0 0 0 15px rgba(212, 175, 55, 0.15),
+            0 0 0 30px rgba(212, 175, 55, 0.08),
+            0 0 80px rgba(212, 175, 55, 0.6),
+            inset -5px -5px 20px rgba(0, 0, 0, 0.1),
+            inset 5px 5px 20px rgba(255, 255, 255, 0.5);
+        }
+      }
+
+      @keyframes shimmer {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .company-logo-bubble img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        z-index: 1;
+        position: relative;
+      }
+
+      .company-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+        color: var(--black);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: 0.5px;
+      }
+
+      .company-reg {
+        font-size: 0.8rem;
+        color: var(--gray-text);
+        margin-top: 0.5rem;
+        font-weight: 500;
+      }
+
+      .info-block {
+        margin-bottom: 1.5rem;
+      }
+
+      .info-block:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-label {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+      }
+
+      .info-label i {
+        color: var(--gold);
+        font-size: 1.1rem;
+      }
+
+      .info-content {
+        color: var(--gray-text);
+        line-height: 1.7;
+        padding-left: 1.85rem;
+      }
+
+      .info-content a {
+        color: var(--gold-dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .info-content a:hover {
+        color: var(--gold);
+        text-decoration: underline;
+      }
+
+      .business-hours {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(184, 150, 12, 0.05) 100%);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+        border-left: 4px solid var(--gold);
+      }
+
+      .hours-title {
+        font-weight: 600;
+        color: var(--black);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .hours-title i {
+        color: var(--gold);
+      }
+
+      .hours-list {
+        font-size: 0.9rem;
+        color: var(--gray-text);
+        line-height: 1.8;
+      }
+
+      /* Contact Form Panel */
+      .contact-form-card {
+        background: var(--white);
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--gray-light);
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .form-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.75rem;
+        color: var(--black);
+        margin-bottom: 0.5rem;
+      }
+
+      .form-header p {
+        color: var(--gray-text);
+        font-size: 0.95rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        color: var(--black);
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .form-group label span {
+        color: #dc2626;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        border: 2px solid var(--gray-light);
+        border-radius: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        background: var(--white);
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+      }
+
+      .form-input::placeholder {
+        color: #aaa;
+      }
+
+      textarea.form-input {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .input-icon {
+        position: absolute;
+        right: 1rem;
+        top: 2.7rem;
+        color: var(--gold);
+        font-size: 1rem;
+        pointer-events: none;
+      }
+
+      .form-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4af37' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-submit {
+        flex: 1;
+        min-width: 200px;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+        color: var(--black);
+        border: none;
+        border-radius: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      }
+
+      .btn-whatsapp-quick {
+        flex: 1;
+        min-width: 200px;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        text-decoration: none;
+      }
+
+      .btn-whatsapp-quick:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+      }
+
+      .form-note {
+        text-align: center;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--gray-light);
+        color: var(--gray-text);
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .form-note i {
+        color: var(--gold);
+      }
+
+      /* Success Message */
+      .success-message {
+        display: none;
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+        border: 2px solid var(--success);
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        animation: slideIn 0.5s ease;
+      }
+
+      .success-message.show {
+        display: block;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: var(--success);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin: 0 auto 1rem;
+        animation: scaleIn 0.5s ease 0.2s both;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* Features Section (Replaces Map) */
+      .features-section {
+        padding: 5rem 5%;
+        background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .features-section::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+
+      .features-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .features-header {
+        margin-bottom: 3rem;
+      }
+
+      .features-header h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: var(--black);
+        margin-bottom: 1rem;
+      }
+
+      .features-header p {
+        color: var(--gray-text);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--gray-light);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .feature-card:hover::after {
+        transform: scaleX(1);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(184, 150, 12, 0.15) 100%);
+        color: var(--gold-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 1.5rem;
+        border: 3px solid var(--gold);
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover .feature-icon {
+        background: var(--gold);
+        color: var(--black);
+        transform: scale(1.1);
+      }
+
+      .feature-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        color: var(--black);
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+      }
+
+      .feature-desc {
+        color: var(--gray-text);
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      /* Trust Badges */
+      .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 4rem;
+        flex-wrap: wrap;
+      }
+
+      .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: var(--gray-text);
+        font-size: 0.9rem;
+      }
+
+      .trust-badge i {
+        color: var(--gold);
+        font-size: 1.25rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .contact-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .company-info-card {
+          position: relative;
+          top: 0;
+          order: 2;
+        }
+
+        .contact-form-card {
+          order: 1;
+        }
+
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .features-header h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .contact-float-section {
+          margin-top: -50px;
+        }
+
+        .contact-cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .company-info-card,
+        .contact-form-card {
+          padding: 1.5rem;
+        }
+
+        .form-actions {
+          flex-direction: column;
+        }
+
+        .btn-submit,
+        .btn-whatsapp-quick {
+          width: 100%;
+        }
+
+        .company-logo-bubble {
+          width: 100px;
+          height: 100px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-badges {
+          gap: 1.5rem;
+        }
+      }
+
+      /* Loading State */
+      .btn-submit.loading {
+        pointer-events: none;
+        opacity: 0.8;
+      }
+
+      .btn-submit.loading::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border: 2px solid transparent;
+        border-top-color: var(--black);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Additional hover effects for links */
+      .info-content a {
+        position: relative;
+        display: inline-block;
+      }
+
+      .info-content a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gold);
+        transition: width 0.3s ease;
+      }
+
+      .info-content a:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Gold Gradient Hero -->
+    <header class="hero hero-small contact-hero">
+      <nav class="nav">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/sarasufihoneyreal.png"
+              alt="SaraSufiHoney Logo"
+              class="logo-img"
+            />
+          </a>
+          <span class="logo-text">SaraSufiHoney</span>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Our Products</a></li>
+          <li><a href="benefits.html">Benefits | Education</a></li>
+          <li><a href="reviews.html">Refund Policy</a></li>
+          <li><a href="certification.html">Certification</a></li>
+          <li><a href="blog.html">Blog | Article</a></li>
+          <li><a href="orders.html">Orders</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="nav-active">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <span class="hero-badge">We're Here To Help</span>
+        <h1>Contact Us</h1>
+        <p class="hero-subtitle">
+          Have questions about SaraSufi Kelulut Premium Gold? Reach out by
+          WhatsApp, email, or the message form below. We typically respond within 24 hours.
+        </p>
+      </div>
+    </header>
+
+    <!-- Floating Contact Cards -->
+    <section class="contact-float-section">
+      <div class="contact-cards-grid">
+        <!-- WhatsApp Card -->
+        <div class="contact-float-card">
+          <div class="float-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3 class="float-title">WhatsApp</h3>
+          <p class="float-detail">Fastest response for orders & inquiries</p>
+          <a href="https://wa.me/60134712795?text=Hi%2C%20I%20have%20a%20question%20about%20SaraSufiHoney" class="float-link" target="_blank">
+            Chat Now <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Email Card -->
+        <div class="contact-float-card">
+          <div class="float-icon email">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="float-title">Email</h3>
+          <p class="float-detail">For detailed questions & bulk orders</p>
+          <a href="mailto:info@sarasufi.com" class="float-link">
+            Send Email <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Phone Card -->
+        <div class="contact-float-card">
+          <div class="float-icon phone">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3 class="float-title">Phone</h3>
+          <p class="float-detail">Mon-Sat, 9AM - 6PM</p>
+          <a href="tel:0134712795" class="float-link">
+            Call Now <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Location Card -->
+        <div class="contact-float-card">
+          <div class="float-icon location">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="float-title">Visit Us</h3>
+          <p class="float-detail">Sitiawan, Perak, Malaysia</p>
+          <a href="https://maps.google.com/?q=4.2164,100.6936" class="float-link" target="_blank">
+            Get Directions <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main-section">
+      <div class="contact-layout">
+        <!-- Left: Company Info -->
+        <div class="company-info-card">
+          <div class="company-header">
+            <div class="company-logo-bubble">
+              <img src="images/sarasufihoneyreal.png" alt="SaraSufiHoney Logo" />
+            </div>
+            <h3 class="company-name">SARASUFI HONEY AND NATURALS VENTURES</h3>
+            <p class="company-reg">(202503108784)</p>
+          </div>
+
+          <div class="info-block">
+            <div class="info-label">
+              <i class="fas fa-map-marker-alt"></i>
+              Address
+            </div>
+            <div class="info-content">
+              LOT 4369, LORONG BERINGIN 5/2,<br />
+              KAMPUNG TERSUSUN BATU 7 LEKIR,<br />
+              32020 SITIAWAN, PERAK
+            </div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-label">
+              <i class="fas fa-phone-alt"></i>
+              Contact
+            </div>
+            <div class="info-content">
+              <strong>Phone:</strong> <a href="tel:0134712795">013-471 2795</a><br />
+              <strong>WhatsApp:</strong> <a href="https://wa.me/60134712795" target="_blank">013-471 2795</a><br />
+              <strong>Email:</strong> <a href="mailto:info@sarasufi.com">info@sarasufi.com</a>
+            </div>
+          </div>
+
+          <div class="business-hours">
+            <div class="hours-title">
+              <i class="fas fa-clock"></i>
+              Business Hours
+            </div>
+            <div class="hours-list">
+              Monday - Friday: 9:00 AM - 6:00 PM<br />
+              Saturday: 9:00 AM - 1:00 PM<br />
+              Sunday: Closed
+            </div>
+          </div>
+
+          <div class="info-block" style="margin-top: 1.5rem;">
+            <div class="info-label">
+              <i class="fas fa-shipping-fast"></i>
+              Shipping Info
+            </div>
+            <div class="info-content">
+              We ship nationwide across Malaysia. Same-day delivery available for selected areas in Perak.
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form-card">
+          <div class="form-header">
+            <h2>Send Us a Message</h2>
+            <p>Fill in the form below and we'll get back to you shortly</p>
+          </div>
+
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name <span>*</span></label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required />
+                <i class="fas fa-user input-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span>*</span></label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required />
+                <i class="fas fa-envelope input-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number <span>*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="0123456789" required />
+                <i class="fas fa-phone input-icon"></i>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject" class="form-input form-select">
+                  <option value="general">General Inquiry</option>
+                  <option value="order">Order Question</option>
+                  <option value="bulk">Bulk/Wholesale</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="message">Your Message <span>*</span></label>
+                <textarea id="message" name="message" class="form-input" placeholder="How can we help you today?" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-paper-plane"></i>
+                Send Message
+              </button>
+              <a href="https://wa.me/60134712795" class="btn-whatsapp-quick" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                Quick WhatsApp
+              </a>
+            </div>
+
+            <div class="form-note">
+              <i class="fas fa-info-circle"></i>
+              For urgent matters, we recommend contacting us directly via WhatsApp for faster response.
+            </div>
+          </form>
+
+          <!-- Success Message (hidden by default) -->
+          <div class="success-message" id="successMessage">
+            <div class="success-icon">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+            <button type="button" class="btn-submit" onclick="resetForm()" style="margin-top: 1rem;">
+              Send Another Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section (Replaces Map) -->
+    <section class="features-section">
+      <div class="features-container">
+        <div class="features-header">
+          <h2>Why Choose SaraSufiHoney?</h2>
+          <p>Experience the finest quality kelulut honey, sourced sustainably and delivered with care</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3 class="feature-title">100% Pure & Natural</h3>
+            <p class="feature-desc">Our kelulut honey is raw, unfiltered, and free from additives. Every drop is certified authentic and lab-tested for quality.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
+            <h3 class="feature-title">Fast Nationwide Delivery</h3>
+            <p class="feature-desc">We deliver across Malaysia with secure packaging. Same-day delivery available for selected areas in Perak.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3 class="feature-title">24/7 Customer Support</h3>
+            <p class="feature-desc">Our team is always ready to assist you. Reach us via WhatsApp anytime for quick responses to your inquiries.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-undo-alt"></i>
+            </div>
+            <h3 class="feature-title">Satisfaction Guaranteed</h3>
+            <p class="feature-desc">Not satisfied with your purchase? We offer hassle-free returns and refunds within 7 days of delivery.</p>
+          </div>
+
+          <!-- New Card 5: Sustainable Sourcing -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="feature-title">Sustainably Sourced</h3>
+            <p class="feature-desc">We work with local farmers using eco-friendly practices. Our honey is harvested responsibly to protect the environment and support local communities.</p>
+          </div>
+
+          <!-- New Card 6: Lab Tested -->
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3 class="feature-title">Lab Tested & Certified</h3>
+            <p class="feature-desc">Every batch undergoes rigorous lab testing for purity, quality, and authenticity. View our certification reports for complete transparency.</p>
+          </div>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Secure Payment</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-truck"></i>
+            <span>Free Shipping Over RM100</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-award"></i>
+            <span>Premium Quality</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-leaf"></i>
+            <span>Eco-Friendly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-column footer-brand">
+          <div class="footer-logo">
+            <img src="images/sarasufihoneyreal.png" alt="SaraSufiHoney" />
+            <span>SaraSufiHoney</span>
+          </div>
+          <p>
+            We are a lifestyle honey brand that brings 100% pure, carefully
+            sourced kelulut honey from hive to home, delivering wellness in
+            every drop.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Wiki Hub</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="certification.html">Lab Report</a></li>
+            <li><a href="benefits.html">Honey Education</a></li>
+            <li><a href="orders.html">Orders</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="blog.html">Blog & Article</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="reviews.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-social">
+          <h4>Connect With Us</h4>
+          <p>Follow us for daily honey tips and exclusive offers</p>
+          <div class="social-icons">
+            <a
+              href="https://www.instagram.com/sarasufihoney?igsh=YXA5ZnU3MDhydGdu"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/183qQZGTaq/?mibextid=wwXIfr"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@sarasufihoney?_r=1&_t=ZS-92hCdTRLbt7"
+              target="_blank"
+              aria-label="TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 SaraSufiHoney. All rights reserved.</p>
+        <p>
+          <a href="refund.html">Refund Policy</a> ·
+          <a href="shipping.html">Shipping Policy</a> ·
+          <a href="privacy.html">Privacy Policy</a> ·
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+          menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+          });
+        }
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          // Show loading state
+          const submitBtn = contactForm.querySelector('.btn-submit');
+          submitBtn.classList.add('loading');
+          submitBtn.innerHTML = 'Sending...';
+          
+          // Simulate form submission (replace with actual API call)
+          setTimeout(() => {
+            contactForm.style.display = 'none';
+            successMessage.classList.add('show');
+            submitBtn.classList.remove('loading');
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+          }, 1500);
+        });
+
+        // Reset form function
+        window.resetForm = function() {
+          contactForm.reset();
+          successMessage.classList.remove('show');
+          contactForm.style.display = 'block';
+        };
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.contact-float-card, .company-info-card, .contact-form-card, .feature-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'all 0.6s ease';
+          observer.observe(el);
+        });
+
+        // Stagger animation for contact cards
+        const contactCards = document.querySelectorAll('.contact-float-card');
+        contactCards.forEach((card, index) => {
+          card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Stagger animation for feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach((card, index) => {
+          card.style.transitionDelay = `${index * 0.1}s`;
+        });
+      });
+    </script>
+  </body>
+</html>
